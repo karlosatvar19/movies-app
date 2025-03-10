@@ -1,0 +1,26 @@
+{
+  "name": "space-movies",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Space Movies Explorer - A full-stack application built with Clean Architecture",
+  "scripts": {
+    "dev": "pnpm -r run dev",
+    "dev:frontend": "pnpm --filter frontend run dev",
+    "dev:backend": "pnpm --filter backend run dev",
+    "build": "pnpm -r run build",
+    "build:frontend": "pnpm --filter frontend run build",
+    "build:backend": "pnpm --filter backend run build",
+    "test": "pnpm -r run test",
+    "test:frontend": "pnpm --filter frontend run test",
+    "test:backend": "pnpm --filter backend run test",
+    "clean": "pnpm -r run clean",
+    "start:dev": "docker-compose -f docker-compose.dev.yml up --build",
+    "start:prod": "docker-compose up --build -d"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "devDependencies": {}
+}

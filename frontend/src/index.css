@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-popup {
+  position: absolute;
+  z-index: 50;
+}
+
+.tooltip-trigger {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tooltip-trigger:hover {
+  transform: scale(1.1);
+}
+
+.tooltip-arrow {
+  z-index: -1;
+}

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 650">
+  <!-- Definitions for gradients and other effects -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f9fa" />
+      <stop offset="100%" stop-color="#e9ecef" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.2" />
+    </filter>
+    
+    <linearGradient id="client-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6C63FF" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+    
+    <linearGradient id="frontend-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    
+    <linearGradient id="backend-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    
+    <linearGradient id="mongo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#3730A3" />
+    </linearGradient>
+    
+    <linearGradient id="redis-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+    
+    <linearGradient id="api-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    
+    <!-- Arrow markers for the connections -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" 
+      markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(17, 24, 39, 0.7)"/>
+    </marker>
+    
+    <marker id="arrow-ws" viewBox="0 0 10 10" refX="5" refY="5" 
+      markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(79, 70, 229, 0.7)"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="950" height="650" fill="url(#bg-gradient)" rx="12" />
+  
+  <!-- Title -->
+  <text x="475" y="60" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#111827">Space Movies Explorer Architecture</text>
+  
+  <!-- Client Browser Box -->
+  <rect x="100" y="140" width="220" height="100" rx="12" fill="url(#client-gradient)" filter="url(#shadow)"/>
+  <text x="210" y="185" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="white">Client Browser</text>
+  <text x="210" y="215" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">HTML5, CSS3, JavaScript</text>
+  
+  <!-- Frontend Container Box -->
+  <rect x="100" y="330" width="220" height="140" rx="12" fill="url(#frontend-gradient)" filter="url(#shadow)"/>
+  <text x="210" y="370" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="white">Frontend Container</text>
+  <text x="210" y="400" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">React + TypeScript</text>
+  <text x="210" y="425" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">Tailwind CSS + DaisyUI</text>
+  <text x="210" y="450" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">Socket.io Client</text>
+  
+  <!-- Backend Container Box -->
+  <rect x="420" y="330" width="220" height="140" rx="12" fill="url(#backend-gradient)" filter="url(#shadow)"/>
+  <text x="530" y="370" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="white">Backend Container</text>
+  <text x="530" y="400" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">NestJS</text>
+  <text x="530" y="425" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">Clean Architecture</text>
+  <text x="530" y="450" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">Socket.io Server</text>
+  
+  <!-- MongoDB Container Box -->
+  <rect x="710" y="220" width="180" height="100" rx="12" fill="url(#mongo-gradient)" filter="url(#shadow)"/>
+  <text x="800" y="275" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="white">MongoDB</text>
+  <text x="800" y="300" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">Movie Storage</text>
+  
+  <!-- Redis Container Box -->
+  <rect x="710" y="380" width="180" height="100" rx="12" fill="url(#redis-gradient)" filter="url(#shadow)"/>
+  <text x="800" y="435" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="white">Redis</text>
+  <text x="800" y="460" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">Caching &amp; Rate Limiting</text>
+  
+  <!-- OMDB API Box -->
+  <rect x="420" y="530" width="220" height="80" rx="12" fill="url(#api-gradient)" filter="url(#shadow)"/>
+  <text x="530" y="570" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="white">OMDB API</text>
+  <text x="530" y="595" font-family="Inter, system-ui, sans-serif" font-size="15" text-anchor="middle" fill="white" opacity="0.9">External Movie Data</text>
+  
+  <!-- Arrows -->
+  <!-- Client to Frontend: HTTP -->
+  <line x1="210" y1="240" x2="210" y2="330" stroke="rgba(17, 24, 39, 0.7)" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="160" y="275" width="100" height="24" rx="12" fill="white" opacity="0.9" filter="url(#shadow)"/>
+  <text x="210" y="293" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#111827">HTTP</text>
+  
+  <!-- Frontend to Backend: HTTP -->
+  <line x1="320" y1="400" x2="420" y2="400" stroke="rgba(17, 24, 39, 0.7)" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="345" y="375" width="50" height="24" rx="12" fill="white" opacity="0.9" filter="url(#shadow)"/>
+  <text x="370" y="393" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#111827">HTTP</text>
+  
+  <!-- Frontend to Backend: WebSockets -->
+  <path d="M 320 370 C 350 330, 390 330, 420 370" stroke="rgba(79, 70, 229, 0.7)" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#arrow-ws)"/>
+  <rect x="335" y="335" width="70" height="24" rx="12" fill="white" opacity="0.9" filter="url(#shadow)"/>
+  <text x="370" y="353" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#4F46E5">WebSockets</text>
+  
+  <!-- Backend to MongoDB -->
+  <line x1="640" y1="370" x2="710" y2="280" stroke="rgba(17, 24, 39, 0.7)" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="670" y="300" width="50" height="24" rx="12" fill="white" opacity="0.9" filter="url(#shadow)"/>
+  <text x="695" y="318" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#111827">CRUD</text>
+  
+  <!-- Backend to Redis -->
+  <line x1="640" y1="410" x2="710" y2="430" stroke="rgba(17, 24, 39, 0.7)" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="650" y="400" width="50" height="24" rx="12" fill="white" opacity="0.9" filter="url(#shadow)"/>
+  <text x="675" y="418" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#111827">Cache</text>
+  
+  <!-- Backend to OMDB API -->
+  <line x1="530" y1="470" x2="530" y2="530" stroke="rgba(17, 24, 39, 0.7)" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="485" y="490" width="90" height="24" rx="12" fill="white" opacity="0.9" filter="url(#shadow)"/>
+  <text x="530" y="508" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#111827">HTTP Fetch</text>
+  
+  <!-- Legend -->
+  <rect x="100" y="530" width="250" height="80" rx="12" fill="white" filter="url(#shadow)"/>
+  <text x="225" y="555" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" text-anchor="middle" fill="#111827">Legend</text>
+  
+  <line x1="120" y1="575" x2="150" y2="575" stroke="rgba(17, 24, 39, 0.7)" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="235" y="580" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#111827">HTTP Request/Response</text>
+  
+  <line x1="120" y1="600" x2="150" y2="600" stroke="rgba(79, 70, 229, 0.7)" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#arrow-ws)"/>
+  <text x="235" y="605" font-family="Inter, system-ui, sans-serif" font-size="13" text-anchor="middle" fill="#4F46E5">WebSocket Connection</text>
+</svg>
