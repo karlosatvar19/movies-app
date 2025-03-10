@@ -7,6 +7,7 @@ import { CacheManagerService } from '../../../infrastructure/cache/services/cach
 import { JobManagerService } from '../../../domain/jobs/services/job-manager.service';
 import { FetchMoviesCommand } from './fetch-movies.command';
 import { FetchMoviesResult } from '../../dto/fetch-movies-result';
+import { Movie } from '../../../domain/movies/entities/movie.entity';
 
 @Injectable()
 export class FetchMoviesHandler {
@@ -84,6 +85,24 @@ export class FetchMoviesHandler {
       this.logger.error(`Database check error: ${error.message}`);
       return true;
     }
+  }
+
+  /**
+   * Transforms OMDB API movie data to match our schema field names
+   * OMDB uses capitalized fields (Title, Year) while our schema uses lowercase (title, year)
+   */
+  private transformMovieData(omdbMovie: any): Partial<Movie> {
+    return {
+      title: omdbMovie.Title,
+      year: omdbMovie.Year,
+      director: omdbMovie.Director,
+      plot: omdbMovie.Plot,
+      poster: omdbMovie.Poster,
+      imdbID: omdbMovie.imdbID,
+      type: omdbMovie.Type,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
   }
 
   async execute(command: FetchMoviesCommand): Promise<FetchMoviesResult> {
@@ -178,10 +197,13 @@ export class FetchMoviesHandler {
                 const movieDetail =
                   await this.omdbService.getMovieDetails(imdbId);
                 if (movieDetail) {
-                  await this.moviesService.saveMovie({
-                    ...movieDetail,
-                    createdAt: new Date(),
-                  });
+                  // Transform the movie data to match our schema
+                  const transformedMovieData = this.transformMovieData(movieDetail);
+
+                  // Log the transformed data for debugging
+                  this.logger.debug(`Saving movie: ${JSON.stringify(transformedMovieData)}`);
+
+                  await this.moviesService.saveMovie(transformedMovieData);
                   return true;
                 }
               }
@@ -194,6 +216,12 @@ export class FetchMoviesHandler {
           if (wasNewlyAdded) newMoviesCount++;
         } catch (error) {
           this.logger.error(`Error saving movie ${imdbId}: ${error.message}`);
+
+          // Add more detailed error logging
+          if (error.name === 'ValidationError') {
+            this.logger.error(`Validation error details: ${JSON.stringify(error.errors || {})}`);
+          }
+
           continue;
         }
       }
